@@ -1,12 +1,14 @@
 Module.register("MMM-DVB", {
 
     defaults: {
-        stopName: "Hauptbahnhof", // name of the stop
+        stopName: "Hauptbahnhof", // name of the stop for display purpose only
+        stopID: 33000006, //Stop ID
         timeOffset: 0, // how many minutes in the future
         resultNum: 5, // number of displayed results
         lines: [], // what lines should be displayed
         directions: [], // what destinations should be displayed
         reload: 1 * 60 * 1000 // reload interval, every minute
+
     },
 
     getTranslations: function() {
@@ -147,7 +149,7 @@ Module.register("MMM-DVB", {
 
         var request = {
             id: self.identifier,
-            stopName: self.config.stopName,
+            stopName: self.config.stopID,
             timeOffset: self.config.timeOffset,
             resultNum: self.config.resultNum,
             lines: self.config.lines,
